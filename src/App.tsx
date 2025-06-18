@@ -1,4 +1,4 @@
-import './App.css'
+import './app.css'
 import Routes from './routes/Routes'
 import {Helmet} from "react-helmet"
 
