@@ -12,8 +12,8 @@ function App() {
         <meta property="og:title" content="หน้าแรก | MyApp" />
         <meta property="og:description" content="เว็บแอปสำหรับ..." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/" />
-        <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+        <meta property="og:url" content="https://noytest.com/" />
+        <meta property="og:image" content="https://noytest.com/og-image.jpg" />
       </Helmet>
         <Routes />
     </>
