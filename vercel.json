@@ -1,11 +1,11 @@
 {
     "rewrites": [
-        { "source": "/(.*)", "destination": "/api/index.js" }
+        { "source": "/(.*)", "destination": "/api/index.ts" }
     ],
     "functions": {
       "api/index.js": {
         "runtime": "nodejs18.x"
       }
     },
-    "build": "vite build && vite build --ssr src/entry-server.tsx"
+    "build": "npm run build:client && npm run build:server"
   }
