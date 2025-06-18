@@ -7,5 +7,14 @@
         "runtime": "nodejs18.x"
       }
     },
-    "build": "npm run build:client && npm run build:server"
+    "build": {
+      "command": "npm run build",
+      "output": "dist"
+    },
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
+    ]
   }
