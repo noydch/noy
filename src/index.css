@@ -8,7 +8,9 @@
 
 body{
     color: white;
+    background-color: #1B1F24;
 }
+
 
 @layer components{
     .container{
