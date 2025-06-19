@@ -16,7 +16,7 @@ if (isProduction) {
     const compression = (await import('compression')).default
     const sirv = (await import('sirv')).default
     app.use(compression())
-    app.use(base, sirv('dist/client', { extensions: [] }))
+    app.use(base, sirv(path.resolve('dist/client'), { extensions: [] }))
 }
 
 // Serve HTML
@@ -24,16 +24,9 @@ app.use('*', async (req, res) => {
     try {
         const url = req.originalUrl.replace(base, '')
 
-        let template
-        let render
-        if (!isProduction) {
-            template = await fs.readFile('index.html', 'utf-8')
-            // dev mode: ไม่ต้องใช้ vite ใน production
-            render = (await import('../src/entry-server.tsx')).render
-        } else {
-            template = templateHtml
-            render = (await import('../dist/server/entry-server.js')).render
-        }
+        let template = templateHtml
+        const entryServerPath = path.resolve('dist/server/entry-server.js')
+        const { render } = await import(entryServerPath)
 
         const rendered = await render(url)
 
@@ -43,7 +36,7 @@ app.use('*', async (req, res) => {
 
         res.status(200).set({ 'Content-Type': 'text/html' }).send(html)
     } catch (e) {
-        console.error(e.stack)
+        console.error('SSR Error:', e)
         res.status(500).end(e.stack)
     }
 })
