@@ -9,6 +9,9 @@ export default defineConfig({
     tailwindcss(),
   ],
   build: {
-    outDir: 'dist'
+    outDir: 'dist/client',
+    rollupOptions: {
+      input: '/index.html'
+    }
   }
 })
