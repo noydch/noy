@@ -1,5 +1,5 @@
 import Navbar from "../../components/Navbar"
-import HomeContent from "./subComponent/HomeContent"
+import HomeContent from "./subComponents/HomeContent"
 
 const Home = () => {
     return (

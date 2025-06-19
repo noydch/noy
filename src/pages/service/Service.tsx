@@ -1,8 +1,11 @@
 import Navbar from "../../components/Navbar"
+import ServiceContent from "./subComponents/ServiceContent"
 
 const Service = () => {
     return (
-        <Navbar>Service</Navbar>
+        <Navbar>
+            <ServiceContent/>
+        </Navbar>
     )
 }
 export default Service

@@ -1,6 +1,7 @@
 // import { IoIosPin } from 'react-icons/io'
 // import { IoPerson, IoSearchSharp } from 'react-icons/io5'
 import { NavLink } from 'react-router-dom'
+import Footer from './Footer'
 
 
 interface navlink {
@@ -40,12 +41,15 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
                                 <NavLink key={index}
                                     className={({ isActive }) => ` 
                                         relative block py-1 transition-all duration-300 ease-in-out
-                                        ${isActive ? 'text-white' : 'text-gray-400 hover:text-white'}
+                                        ${isActive ? 'text-white' : 'text-gray-400'}
+                                        hover:text-white
                                         before:content-[''] before:absolute before:bottom-0 before:left-0 
-                                        before:w-0 before:h-[2px] before:bg-white before:transition-all
+                                        before:h-[2px] before:bg-white before:transition-all
                                         before:duration-300 before:ease-in-out
-                                        hover:before:w-full hover:scale-105 hover:transform
-                                        ${isActive ? 'before:w-full scale-105 transform' : ''}
+                                        ${isActive ? 'before:w-full' : 'before:w-0'}
+                                        hover:before:w-full
+                                        ${isActive ? 'scale-105 transform' : ''}
+                                        hover:scale-105 hover:transform
                                         after:content-[''] after:absolute after:top-0 after:left-0 
                                         after:w-full after:h-full after:opacity-0 
                                         after:transition-opacity after:duration-300 after:ease-in-out
@@ -63,6 +67,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
                 </div>
             </nav>
             {children}
+            <Footer/>
         </>
     )
 }

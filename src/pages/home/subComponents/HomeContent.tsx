@@ -7,11 +7,15 @@ import yellowPattern2 from './../../../assets/yellowItem2.png'
 import element1 from './../../../assets/foot.png'
 import element2 from './../../../assets/item1.png'
 import robotImg from './../../../assets/robot.png'
+import { NavLink } from 'react-router-dom'
+import { FaArrowsToDot } from 'react-icons/fa6'
+import { GrCloudComputer } from 'react-icons/gr'
+import HomeQandA from './HomeQandA'
 
 const HomeContent = () => {
     return (
         <div className=" containers my-20">
-            <div className=' flex items-end justify-between'>
+            <section className=' flex items-end justify-between'>
                 <div className=' flex flex-col gap-y-4'>
                     <p className=" text-gray-400 font-semibold">With Stitle</p>
                     <h1 className=" font-bold text-5xl">Let's start a project together</h1>
@@ -28,8 +32,10 @@ const HomeContent = () => {
                     <img src={yellowPattern} alt=""
                         className='w-[200px]' />
                 </div>
-            </div>
-            <div className=' flex gap-5 mt-20'>
+            </section>
+
+            {/* section 2 */}
+            <section className=' flex gap-5 mt-20'>
                 <div className=' flex-[1] flex flex-col gap-5'>
                     <div className=' flex gap-5'>
                         <div style={{ backgroundImage: `url(${coverBg})` }}
@@ -96,7 +102,81 @@ const HomeContent = () => {
                         />
                     </div>
                 </div>
-            </div>
+            </section>
+
+            {/* section 3 */}
+            <section className='mt-20'>
+                <div className=' flex items-end justify-between'>
+                    <h2 className=' text-3xl'>
+                        Trusted by 20,000+ customers <br />
+                        across Europe
+                    </h2>
+                    <NavLink to={'/'} className={"text-yellow-500 border-b"}>Watch their stories</NavLink>
+                </div>
+                <div className=' flex justify-between items-center mt-10'>
+                    <div className='flex items-center justify-center gap-2 text-2xl bg-white/5 w-[130px] p-2 rounded-full'>
+                    <FaArrowsToDot />
+                        asana
+                    </div>
+                    <div className='flex items-center justify-center gap-2 text-2xl bg-white/5 w-[130px] p-2 rounded-full'>
+                    <FaArrowsToDot />
+                        asana
+                    </div>
+                    <div className='flex items-center justify-center gap-2 text-2xl bg-white/5 w-[130px] p-2 rounded-full'>
+                    <FaArrowsToDot />
+                        asana
+                    </div>
+                    <div className='flex items-center justify-center gap-2 text-2xl bg-white/5 w-[130px] p-2 rounded-full'>
+                    <FaArrowsToDot />
+                        asana
+                    </div>
+                    <div className='flex items-center justify-center gap-2 text-2xl bg-white/5 w-[130px] p-2 rounded-full'>
+                    <FaArrowsToDot />
+                        asana
+                    </div>
+                </div>
+            </section>
+
+            {/* section 4 */}
+            <section className=' mt-20'>
+                <div>
+                    <div className=' flex justify-between'>
+                        <div>
+                        <h2 className=' text-4xl'>Our service we can <br /> help you</h2>
+                        <p className=' text-gray-300 mt-8'>
+                            We have many interesting services with profesional team, <br />
+                            that will help your work to be better
+                        </p>
+                        </div>
+                        <div className='px-10 py-12 w-[280px] h-[280px] bg-[#1B1F24] border border-[#262A2F] rounded-md'>
+                            <GrCloudComputer className=' text-[#00C39A] text-4xl'/>
+                            <h3 className=' text-2xl font-semibold mt-5'>Development</h3>
+                            <p className=' text-[14px] mt-10'>Create website and responsive website by HTML/CSS, react, webflow</p>
+                        </div>
+                    </div>
+                    <div className=' mt-5 flex justify-between'>
+                        <div className='px-10 py-12 w-[280px] h-[280px] bg-[#1B1F24] border border-[#262A2F] rounded-md'>
+                            <GrCloudComputer className=' text-[#00C39A] text-4xl'/>
+                            <h3 className=' text-2xl font-semibold mt-5'>Development</h3>
+                            <p className=' text-[14px] mt-10'>Create website and responsive website by HTML/CSS, react, webflow</p>
+                        </div>
+                        <div className='px-10 py-12 w-[280px] h-[280px] bg-[#1B1F24] border border-[#262A2F] rounded-md'>
+                            <GrCloudComputer className=' text-[#00C39A] text-4xl'/>
+                            <h3 className=' text-2xl font-semibold mt-5'>Development</h3>
+                            <p className=' text-[14px] mt-10'>Create website and responsive website by HTML/CSS, react, webflow</p>
+                        </div>
+                        <div className='px-10 py-12 w-[280px] h-[280px] bg-[#1B1F24] border border-[#262A2F] rounded-md'>
+                            <GrCloudComputer className=' text-[#00C39A] text-4xl'/>
+                            <h3 className=' text-2xl font-semibold mt-5'>Development</h3>
+                            <p className=' text-[14px] mt-10'>Create website and responsive website by HTML/CSS, react, webflow</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            {/* section 5 */}
+            <HomeQandA/>
         </div>
     )
 }
